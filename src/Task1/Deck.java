@@ -8,6 +8,7 @@ public class Deck {
     private static final String[] suit = {"Hearts", "Spades", "Clubs", "Diamonds"};
     private static final List<String> rank = new ArrayList<>(
             Arrays.asList("A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"));
+
     private List<PlayingCard> fullDeck = new ArrayList();
 
     public void getFullDeck() {
