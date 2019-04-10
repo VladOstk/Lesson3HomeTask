@@ -23,32 +23,38 @@ public class DeckTests {
         rank = new ArrayList<>(
                 Arrays.asList("A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"));
         deck = new Deck();
-        testDeck = deck.getFullDeck();
+
     }
 
     @Test
+    public void getFullDeck_deckHas52Cards(){
+        Assert.assertTrue(deck.getFullDeck().size()==52);
+    }
+    @Test
     public void getFullDeck_containsAllCards() {
-        boolean cardIsFound = false;
+        List<Boolean> cardIsFound = new ArrayList<>();
+        testDeck = deck.getFullDeck();
+        int testDeckIterator = 0;
 
+        for (int i = 0; i < testDeck.size(); i++) {
+            cardIsFound.add(i, false);
+        }
         for (int i = 0; i < suit.length; i++) {
             for (int j = 0; j < rank.size(); j++) {
-                for (int k = 0; k < rank.size(); k++) {
-                    if (testDeck.get(j).getCardRank().contains(rank.get(k)) && testDeck.get(j).getCardSuit().contains(suit[i])) {
-                        cardIsFound = true;
-
+                for (int k = 0; k < testDeck.size(); k++) {
+                    if (testDeck.get(k).getCardRank() == rank.get(j)
+                            && testDeck.get(k).getCardSuit() == suit[i]) {
+                        cardIsFound.set(testDeckIterator, true);
+                        testDeckIterator++;
                         break;
-
-                    } else if (k == rank.size() - 1 && cardIsFound == false) {
-                        Assert.assertTrue(cardIsFound);
                     }
-                    if (k == rank.size() - 1) {
-                    }
-
-
                 }
             }
-
         }
+
+        Assert.assertTrue(!cardIsFound.contains(false));
+
+
 
     }
 

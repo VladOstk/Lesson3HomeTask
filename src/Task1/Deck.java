@@ -18,13 +18,15 @@ public class Deck {
             }
         }
 
-        for (PlayingCard i : fullDeck) {
-            i.getRankAndSuit();
-        }
 
         return fullDeck;
     }
 
+    public void showFullDeck() {
+        for (PlayingCard i : fullDeck) {
+            i.getRankAndSuit();
+        }
+    }
 
 
 }
