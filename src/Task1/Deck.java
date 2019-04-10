@@ -9,19 +9,22 @@ public class Deck {
     private static final List<String> rank = new ArrayList<>(
             Arrays.asList("A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"));
 
-    private List<PlayingCard> fullDeck = new ArrayList();
+    private static List<PlayingCard> fullDeck = new ArrayList<>();
 
-    public void getFullDeck() {
+    public List<PlayingCard> getFullDeck() {
         for (int i = 0; i < suit.length; i++) {
             for (int j = 0; j < rank.size(); j++) {
                 fullDeck.add(new PlayingCard(suit[i], rank.get(j)));
             }
         }
 
-        for(PlayingCard i:fullDeck){
+        for (PlayingCard i : fullDeck) {
             i.getRankAndSuit();
         }
+
+        return fullDeck;
     }
+
 
 
 }

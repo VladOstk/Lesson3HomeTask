@@ -13,4 +13,12 @@ public class PlayingCard {
     public void getRankAndSuit(){
         System.out.println("Rank "+cardRank+" Suit "+cardSuit);
     }
+
+    public String getCardSuit() {
+        return cardSuit;
+    }
+
+    public String getCardRank() {
+        return cardRank;
+    }
 }
