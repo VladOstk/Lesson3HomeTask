@@ -27,11 +27,13 @@ public class DeckTests {
     }
 
     @Test
-    public void getFullDeck_deckHas52Cards(){
-        Assert.assertTrue(deck.getFullDeck().size()==52);
+    public void getFullDeck_deckHas52Cards() {
+        Assert.assertTrue(deck.getFullDeck().size() == 52);
     }
+
     @Test
     public void getFullDeck_containsAllCards() {
+
         List<Boolean> cardIsFound = new ArrayList<>();
         testDeck = deck.getFullDeck();
         int testDeckIterator = 0;
