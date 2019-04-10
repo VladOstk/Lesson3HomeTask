@@ -54,8 +54,6 @@ public class DeckTests {
 
         Assert.assertTrue(!cardIsFound.contains(false));
 
-
-
     }
 
 }
